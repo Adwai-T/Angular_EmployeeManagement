@@ -1,0 +1,58 @@
+.container {
+  height: 100vh;
+}
+
+.sidenav-content {
+  display: flex;
+}
+
+.sidenav {
+  display: block;
+  min-width: 320px;
+  margin: auto;
+  width: fit-content;
+}
+
+.navbar-top {
+  display: flex;
+  position: fixed;
+  background-color: whitesmoke;
+  width: 100%;
+  padding: 18px;
+}
+
+.sidenav div {
+  display: flex;
+  margin: 15px;
+  background-color: aquamarine;
+  justify-content: center;
+  padding: 10px;
+}
+
+.navlink-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#navbar-top-right {
+  display: flex;
+  margin: 0px 30px 0px auto;
+}
+
+#router-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 85px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .sidenav {
+    min-width: 300px;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="form-container">
+
+  <form [formGroup]="signupForm" (ngSubmit)="createManager()" #formElement>
+
+    <mat-form-field>
+      <mat-label>EmailId</mat-label>
+      <input matInput formControlName="email" />
+      <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Designation</mat-label>
+      <input matInput formControlName="role"/>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password"/>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confirm Password</mat-label>
+      <input type="password" matInput formControlName="confirmPassword"/>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary"> Sign-Up </button>
+  </form>
+
+  <div class="message error" *ngIf="error"> 
+    {{error}}
+  </div>
+
+  <div class="message success" *ngIf="success">
+    {{success}}
+  </div>
+</div>
+
