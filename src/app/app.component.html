@@ -7,12 +7,14 @@
 
     <!--Side Nav controls-->
     <div id="employee-control">
-      <div (click)="showAllEmployees()" class="controls">Show All Employees</div>
+      <div (click)="showAllEmployees()" class="controls">
+        Show All Employees
+      </div>
 
       <div class="controls">
         <mat-form-field>
           <mat-label>Manager Email-Id</mat-label>
-          <input matInput #managerEmail required/>
+          <input matInput #managerEmail required />
           <mat-hint>Manager email-id</mat-hint>
         </mat-form-field>
         <button
@@ -26,7 +28,7 @@
       <div class="controls">
         <mat-form-field>
           <mat-label>Email-Id</mat-label>
-          <input matInput #emailId  required/>
+          <input matInput #emailId required />
           <mat-hint>Employee email-id</mat-hint>
         </mat-form-field>
         <button

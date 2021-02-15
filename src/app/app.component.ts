@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(
     private authService: AuthenticationService,
     private router: Router,
-    private showEmployeeService:ShowEmployeesService
+    private showEmployeeService: ShowEmployeesService
   ) {
     authService.isAuthenticatedEvent.subscribe((isAuthenticated) => {
       this.authenticated = isAuthenticated;
@@ -36,23 +36,23 @@ export class AppComponent {
       let jwt = localStorage.getItem('authToken').substring(7);
       this.managerName = this.authService.getClaimFromJwt(jwt, 'name');
 
-      router.navigateByUrl('/employees')
+      router.navigateByUrl('/employees');
     }
   }
 
-  showEmployeeByManagerEmail(email) :void{
+  showEmployeeByManagerEmail(email): void {
     this.showEmployeeService.getEmployeesByManagerEmail(email);
   }
 
-  showAllEmployees() :void{
+  showAllEmployees(): void {
     this.showEmployeeService.getAllEmployees();
   }
 
-  showEmployeesByEmailId(email) :void{
+  showEmployeesByEmailId(email): void {
     this.showEmployeeService.getEmployeeByEmailId(email);
   }
 
-  logout(event) :void {
+  logout(event): void {
     localStorage.removeItem('authToken');
     this.authService.isAuthenticatedEvent.emit(false);
     this.router.navigateByUrl('/login');
