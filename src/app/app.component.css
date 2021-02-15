@@ -24,9 +24,21 @@
 .sidenav div {
   display: flex;
   margin: 15px;
-  background-color: aquamarine;
   justify-content: center;
   padding: 10px;
+}
+
+#title-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkcyan;
+  margin : 5px;
+  background-color: white;
+}
+
+mat-drawer{
+  background-color: whitesmoke;
 }
 
 .navlink-div {
@@ -38,7 +50,7 @@
 
 #navbar-top-right {
   display: flex;
-  margin: 0px 30px 0px auto;
+  margin: 0px 25% 0px auto;
 }
 
 #router-content {
@@ -49,6 +61,21 @@
   height: 100%;
   margin-top: 85px;
   padding: 10px;
+}
+
+#employee-control{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+}
+
+.controls {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.controls:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {

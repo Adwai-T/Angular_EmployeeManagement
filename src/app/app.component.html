@@ -1,7 +1,42 @@
 <mat-drawer-container class="container" autosize>
   <!--Side Nav Bar-->
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <div id="title-card"></div>
+  <mat-drawer #drawer class="sidenav" mode="side" [opened]="drawerOpen">
+    <div id="title-card">
+      <h1>Hello &nbsp;{{ managerName }}</h1>
+    </div>
+
+    <!--Side Nav controls-->
+    <div id="employee-control">
+      <div (click)="showAllEmployees()" class="controls">Show All Employees</div>
+
+      <div class="controls">
+        <mat-form-field>
+          <mat-label>Manager Email-Id</mat-label>
+          <input matInput #managerEmail required/>
+          <mat-hint>Manager email-id</mat-hint>
+        </mat-form-field>
+        <button
+          mat-stroked-button
+          (click)="showEmployeeByManagerEmail(managerEmail.value)"
+        >
+          Get
+        </button>
+      </div>
+
+      <div class="controls">
+        <mat-form-field>
+          <mat-label>Email-Id</mat-label>
+          <input matInput #emailId  required/>
+          <mat-hint>Employee email-id</mat-hint>
+        </mat-form-field>
+        <button
+          mat-stroked-button
+          (click)="showEmployeesByEmailId(emailId.value)"
+        >
+          Get
+        </button>
+      </div>
+    </div>
   </mat-drawer>
 
   <!--Content-->
@@ -29,10 +64,18 @@
       </div>
       <div class="navlink-div">Management Dashboard</div>
       <div id="navbar-top-right">
-        <div routerLink="login" class="navlink-div" *ngIf="!authenticated">SignIn</div>
-        <div routerLink="signup" class="navlink-div" *ngIf="!authenticated">SignUp</div>
-        <div routerLink="signup" class="navlink-div" *ngIf="authenticated">{{managerName}}</div>
-        <div (click)="logout($event)" class="navlink-div" *ngIf="authenticated">Logout</div>
+        <div routerLink="login" class="navlink-div" *ngIf="!authenticated">
+          SignIn
+        </div>
+        <div routerLink="signup" class="navlink-div" *ngIf="!authenticated">
+          SignUp
+        </div>
+        <div routerLink="signup" class="navlink-div" *ngIf="authenticated">
+          {{ managerName }}
+        </div>
+        <div (click)="logout($event)" class="navlink-div" *ngIf="authenticated">
+          Logout
+        </div>
       </div>
     </div>
 

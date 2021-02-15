@@ -5,4 +5,6 @@ export interface Employee {
   managerId?: number,
   name: string,
   role: string
+  salary: number,
+  gender: string
 }

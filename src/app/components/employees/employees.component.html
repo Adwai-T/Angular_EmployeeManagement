@@ -1,1 +1,9 @@
-<p>employees works!</p>
+<div class="container">
+  <div class="button-bar">
+    <button mat-stroked-button color="primary" (click) = "addEmployee()">Add Employee</button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="employees-container">
+    <app-employee *ngFor="let employee of employees" [employee]="employee"></app-employee>
+  </div>
+</div>

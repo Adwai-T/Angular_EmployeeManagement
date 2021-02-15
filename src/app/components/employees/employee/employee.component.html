@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="header-image">
+      <img mat-card-image [src]="imageSrc" alt="Profile Image">
+    </div>
+    <mat-card-title>{{employee.name}}</mat-card-title>
+    <mat-card-subtitle>{{employee.emailId}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li><span>Working Since : &nbsp;</span><span>{{employee.joiningDate}}</span></li>
+      <li><span>Salary : &nbsp;</span><span>{{employee.salary | currency:'INR'}}</span></li>
+      <li><span>Gender : &nbsp;</span><span>{{employee.gender}}</span></li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <div class="icon-bar">
+      <mat-icon aria-hidden="false" aria-label="Delete" (click)="deleteEmployee()">delete_outline</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Edit" (click)="editEmployee()">mode</mat-icon>
+    </div>
+    
+    <div class="message error" *ngIf="error"> 
+      {{error}}
+    </div>
+  
+    <div class="message success" *ngIf="success">
+      {{success}}
+    </div>
+  </mat-card-content>
+</mat-card>

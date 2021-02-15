@@ -1,6 +1,6 @@
 <div class="float-container">
 
-  <form [formGroup]="signupForm" (ngSubmit)="createManager()" #formElement>
+  <form [formGroup]="editEmployeeForm" (ngSubmit)="editEmployee()" #formElement>
 
     <mat-form-field>
       <mat-label>EmailId</mat-label>
@@ -21,18 +21,24 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Password</mat-label>
-      <input type="password" matInput formControlName="password"/>
+      <mat-label>JoiningDate</mat-label>
+      <input matInput formControlName="joining"/>
       <mat-hint></mat-hint>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Confirm Password</mat-label>
-      <input type="password" matInput formControlName="confirmPassword"/>
+      <mat-label>Salary</mat-label>
+      <input matInput formControlName="salary"/>
       <mat-hint></mat-hint>
     </mat-form-field>
 
-    <button mat-raised-button color="primary"> Sign-Up </button>
+    <mat-form-field>
+      <mat-label>Gender</mat-label>
+      <input matInput formControlName="gender"/>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary"> Add Employee </button>
   </form>
 
   <div class="message error" *ngIf="error"> 
@@ -43,4 +49,3 @@
     {{success}}
   </div>
 </div>
-

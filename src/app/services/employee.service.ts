@@ -36,6 +36,12 @@ export class EmployeeService {
     }
   }
 
+  getAllEmployees() : Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.employeeUrl, {
+      headers: this.getAuthHeader(),
+    });
+  }
+
   /**
    * Get all Employees by Manager Id.
    * @param id
@@ -51,6 +57,42 @@ export class EmployeeService {
       return this.http.get<Employee[]>(this.employeeUrl, options);
     } else {
       throw new Error('Manager_id Invalid');
+    }
+  }
+
+  /**
+   * Get all Employees by Manager Email Id
+   * @param emailId 
+   */
+  getEmployeesByManagerEmailId(emailId): Observable<Employee[]> {
+    if (emailId) {
+      let options = {
+        headers: this.getAuthHeader(),
+        params: this.getHttpParams({
+          manager_email_id: emailId,
+        }),
+      };
+      return this.http.get<Employee[]>(this.employeeUrl, options);
+    } else {
+      throw new Error('Manager EmailId Invalid');
+    }
+  }
+
+    /**
+   * Get Employee by Email Id
+   * @param emailId 
+   */
+  getEmployeesByEmailId(emailId): Observable<Employee> {
+    if (emailId) {
+      let options = {
+        headers: this.getAuthHeader(),
+        params: this.getHttpParams({
+          email_id: emailId,
+        }),
+      };
+      return this.http.get<Employee>(this.employeeUrl, options);
+    } else {
+      throw new Error('Manager EmailId Invalid');
     }
   }
 
